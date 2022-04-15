@@ -1,3 +1,4 @@
+import { FinalizadosComponent } from './components/finalizados/finalizados.component';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
@@ -22,7 +23,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    ReadAllComponent
+    ReadAllComponent,
+    FinalizadosComponent
   ],
   imports: [
     BrowserModule,
