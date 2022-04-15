@@ -1,5 +1,9 @@
 <div class="container">
+    <div class="badge">
+        <button mat-stroked-button color="primary" matBadge="{{ closed }}"> Task Closed</button>
+    </div>
     <button class="novo-todo mat-elevation-z8" mat-stroked-button color="primary"> New To-do</button>
+        
         <div class="content" *ngFor="let item of list">
             <mat-card class="mat-elevation-z8" >
                 <p>Data para Finalizar: {{item.dataParaFinalizar}}</p>
@@ -17,7 +21,7 @@
                         <mat-icon>edit</mat-icon>
                     </button>
             
-                    <button mat-mini-fab color="warn">
+                    <button (click)="delete(item.id)" mat-mini-fab color="warn">
                         <mat-icon>delete</mat-icon>
                     </button>
                 </div>
