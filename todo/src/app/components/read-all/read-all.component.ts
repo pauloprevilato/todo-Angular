@@ -1,3 +1,4 @@
+import { TodoService } from './../../service/todo.service';
 import { Component, OnInit } from '@angular/core';
 import { Todo } from 'src/app/models/todo';
 
@@ -8,22 +9,18 @@ import { Todo } from 'src/app/models/todo';
 })
 export class ReadAllComponent implements OnInit {
 
-  list: Todo [] = [
-    {
-      titulo: "Aula de Spring",
-      dataParaFinalizar: new Date,
-      finalizado: false
-    },
-    {
-      titulo: "Aula de Angular",
-      dataParaFinalizar: new Date,
-      finalizado: false
-    }
-  ]
+  list: Todo [] = []
 
-  constructor() { }
+  constructor(private service: TodoService) { }
 
   ngOnInit(): void {
+    this.findAll();
+  }
+
+  findAll(): void {
+    this.service.findAll().subscribe((resposta) => {
+      this.list = resposta;
+    })
   }
 
 }
