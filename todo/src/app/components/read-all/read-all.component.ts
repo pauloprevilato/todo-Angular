@@ -35,6 +35,15 @@ export class ReadAllComponent implements OnInit {
     })
   }
 
+  finalizar(item: Todo): void {
+    item.finalizado = true;
+    this.service.update(item).subscribe(() => {
+      this.service.message("Task Finalizada com Sucesso!")
+      this.list = this.list.filter((todo) => todo.id !== item.id)
+      this.closed++;
+    })
+  }
+
   countClosed(): void {
     for(let todo of this.list) {
       if(todo.finalizado) {
