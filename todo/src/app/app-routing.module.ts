@@ -1,3 +1,4 @@
+import { UpdateComponent } from './components/update/update.component';
 import { FinalizadosComponent } from './components/finalizados/finalizados.component';
 import { ReadAllComponent } from './components/read-all/read-all.component';
 import { NgModule } from '@angular/core';
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'create',
     component: CreateComponent
+  },
+  {
+    path: 'update/:id',
+    component: UpdateComponent
   }
 ];
 
