@@ -1,14 +1,12 @@
 <form>
     <h1> Update TO-DO</h1>
 
-    <mat-form-field class="data-finalizar" appearance="fill">
-        <mat-label>Finish Date</mat-label>
-        <input  [(ngModel)]="todo.dataParaFinalizar" name="todo.dataParaFinalizar" matInput [matDatepicker]="dp3" disabled="todo.dataParaFinalizar" />
-        <mat-datepicker-toggle matSufflix [for]="dp3"></mat-datepicker-toggle>
-        <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+    <mat-form-field class="data-finalizar" >
+        <input  [(ngModel)]="todo.dataParaFinalizar" name="todo.dataParaFinalizar" matInput placeholder="Data Para Finalizar">
     </mat-form-field>
 
     <div class="forms">
+
         <mat-form-field class="form">
             <mat-label>Title</mat-label>
             <input  [(ngModel)]="todo.titulo" name="todo.titulo" matInput placeholder="Ex. Estudar">
